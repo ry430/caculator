@@ -2,13 +2,27 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>gameinschool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #000; }
         iframe { width: 100%; height: 100vh; border: none; }
     </style>
 </head>
 <body>
-    <iframe src="https://driftbossonline.github.io/"></iframe>
+
+    <iframe id="displayFrame"></iframe>
+
+    <script>
+        // 1. ここに変換したBase64文字列を貼り付けます
+        var secretData = "aHR0cHM6Ly9kcmlmdGJvc3NvbmxpbmUuZ2l0aHViLmlvLw==";
+
+        // 2. 実行時にURLを復元して読み込みます
+        try {
+            document.getElementById('displayFrame').src = atob(secretData);
+        } catch (e) {
+            console.error("URLの形式が正しくありません。");
+        }
+    </script>
 </body>
 </html>
